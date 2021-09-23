@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">StockPhotos</string>
-    <string name="konten_gambar">Konten Gambar</string>
-    <string name="dummy_title_photo">Abstrak Photograhp in The Dark</string>
+    <string name="image_description">Konten Gambar</string>
+    <string name="dummy_name">Mitya Motov</string>
+    <string name="title_information">INFORMASI FOTO</string>
+    <string name="title_photograph">Fotograper</string>
+    <string name="title_resolution">Resolusi</string>
+    <string name="dummy_size">3000px x 4000px</string>
+
+    <string name="resolution">%1$d px X %2$d px</string>
 </resources>

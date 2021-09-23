@@ -1,5 +1,9 @@
 package com.dorizu.core.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Photo (
     val srcLarge: String,
 
@@ -22,4 +26,4 @@ data class Photo (
     val liked: Boolean,
 
     val height: Int
-)
+): Parcelable

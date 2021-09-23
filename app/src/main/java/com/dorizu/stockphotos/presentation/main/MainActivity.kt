@@ -1,11 +1,14 @@
 package com.dorizu.stockphotos.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dorizu.stockphotos.adapter.PhotosGridAdapter
 import com.dorizu.stockphotos.databinding.ActivityMainBinding
+import com.dorizu.stockphotos.presentation.detail.DetailActivity
+import com.dorizu.stockphotos.presentation.detail.DetailActivity.Companion.PHOTO_EXTRA
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,8 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val photoGridAdapter = PhotosGridAdapter()
-        photoGridAdapter.onItemClick = {
-            //TODO : to detail
+        photoGridAdapter.onItemClick = { selectedPhoto ->
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra(PHOTO_EXTRA, selectedPhoto)
+            startActivity(intent)
         }
 
         mainViewModel.listPhoto.observe(this, {res ->

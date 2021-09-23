@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StockPhotos"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".presentation.detail.DetailActivity"/>
         <activity android:name=".presentation.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -32,14 +32,21 @@ class PhotosGridAdapter : RecyclerView.Adapter<PhotosGridAdapter.ListViewHolder>
 
     override fun getItemCount(): Int = listData.size
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemPhotoGridBinding.bind(itemView)
         fun bind(data: Photo) {
             binding.imgPhoto.clipToOutline = true
+            binding.tvPhotographer.text = data.photographer
             Glide.with(itemView)
                 .load(data.srcMedium)
                 .centerCrop()
                 .into(binding.imgPhoto)
+        }
+
+        init {
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(listData[adapterPosition])
+            }
         }
     }
 }
