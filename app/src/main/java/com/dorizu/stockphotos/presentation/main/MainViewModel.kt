@@ -29,6 +29,11 @@ class MainViewModel @Inject constructor(private val photoUseCase: IPhotosUseCase
         mCompositeDisposable.add(disposable)
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        mCompositeDisposable.clear()
+    }
+
     companion object{
         const val TAG = "MainViewModel"
         private val mCompositeDisposable = CompositeDisposable()
