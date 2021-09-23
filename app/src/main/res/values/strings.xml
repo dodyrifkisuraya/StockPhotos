@@ -12,4 +12,5 @@
     <string name="list">List</string>
     <string name="error_message">Error Message</string>
     <string name="empty_data">Data Kosong</string>
+    <string name="no_signal">Tidak Ada Koneksi Internet!</string>
 </resources>
