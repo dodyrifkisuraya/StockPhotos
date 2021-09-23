@@ -8,7 +8,7 @@ object DataMapper {
         input.map {
             Photo(
                 srcMedium = it.src.medium,
-                srcSmall = it.src.small,
+                srcLarge = it.src.large,
                 width = it.width,
                 avgColor = it.avgColor,
                 photographer = it.photographer,

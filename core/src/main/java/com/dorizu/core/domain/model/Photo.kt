@@ -1,9 +1,7 @@
 package com.dorizu.core.domain.model
 
-import com.dorizu.core.data.remote.response.TypeSrcResponse
-
 data class Photo (
-    val srcSmall: String ,
+    val srcLarge: String,
 
     val srcMedium: String,
 
