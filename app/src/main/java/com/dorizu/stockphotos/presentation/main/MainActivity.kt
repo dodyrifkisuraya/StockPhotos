@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
                 }
                 is ResultState.Empty -> {
                     binding.pbPhotos.visibility = View.GONE
-                    binding.tvError.visibility = View.VISIBLE
                     binding.tvError.text = getString(R.string.empty_data)
+                    binding.tvError.visibility = View.VISIBLE
                 }
                 is ResultState.Success -> {
                     binding.pbPhotos.visibility = View.GONE
@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
                 is ResultState.Error -> {
                     binding.pbPhotos.visibility = View.GONE
                     binding.tvError.text = res.message
+                    binding.tvError.visibility = View.VISIBLE
+                    needReload = true
                 }
             }
         })
