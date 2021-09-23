@@ -1,2 +1,3 @@
 rootProject.name = "StockPhotos"
 include ':app'
+include ':core'

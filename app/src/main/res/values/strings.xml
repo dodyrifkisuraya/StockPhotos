@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StockPhotos</string>
+    <string name="konten_gambar">Konten Gambar</string>
+    <string name="dummy_title_photo">Abstrak Photograhp in The Dark</string>
 </resources>
