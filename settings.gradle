@@ -1,0 +1,2 @@
+rootProject.name = "StockPhotos"
+include ':app'
