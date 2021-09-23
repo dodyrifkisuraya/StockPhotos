@@ -39,7 +39,6 @@ class PhotosGridAdapter : RecyclerView.Adapter<PhotosGridAdapter.ListViewHolder>
             binding.tvPhotographer.text = data.photographer
             Glide.with(itemView)
                 .load(data.srcMedium)
-                .centerCrop()
                 .into(binding.imgPhoto)
         }
 

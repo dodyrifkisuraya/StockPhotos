@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.dorizu.stockphotos.R
 import com.dorizu.stockphotos.adapter.PhotosGridAdapter
 import com.dorizu.stockphotos.databinding.ActivityMainBinding
 import com.dorizu.stockphotos.presentation.detail.DetailActivity
@@ -36,6 +37,24 @@ class MainActivity : AppCompatActivity() {
         with(binding.rvPhotos){
             layoutManager = GridLayoutManager(this@MainActivity,2, GridLayoutManager.VERTICAL, false)
             adapter = photoGridAdapter
+        }
+
+        binding.cpGrid.setOnClickListener {
+            binding.cpGrid.setChipStrokeColorResource(R.color.purple_500)
+            binding.cpList.setChipStrokeColorResource(R.color.transparent)
+            with(binding.rvPhotos){
+                layoutManager = GridLayoutManager(this@MainActivity,2, GridLayoutManager.VERTICAL, false)
+                adapter = photoGridAdapter
+            }
+        }
+
+        binding.cpList.setOnClickListener {
+            binding.cpList.setChipStrokeColorResource(R.color.purple_500)
+            binding.cpGrid.setChipStrokeColorResource(R.color.transparent)
+            with(binding.rvPhotos){
+                layoutManager = GridLayoutManager(this@MainActivity,1, GridLayoutManager.VERTICAL, false)
+                adapter = photoGridAdapter
+            }
         }
     }
 }

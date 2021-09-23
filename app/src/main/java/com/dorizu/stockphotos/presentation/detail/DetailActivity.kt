@@ -26,7 +26,6 @@ class DetailActivity : AppCompatActivity() {
         if (detailPhoto != null){
             Glide.with(this)
                 .load(detailPhoto.srcLarge)
-                .centerCrop()
                 .into(binding.imgPhoto)
             with(binding.content){
                 tvPhotographer.text = detailPhoto.photographer

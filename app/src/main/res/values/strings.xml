@@ -8,4 +8,6 @@
     <string name="dummy_size">3000px x 4000px</string>
 
     <string name="resolution">%1$d px X %2$d px</string>
+    <string name="grid">Grid</string>
+    <string name="list">List</string>
 </resources>
