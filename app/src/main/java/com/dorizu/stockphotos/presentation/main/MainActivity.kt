@@ -2,9 +2,11 @@ package com.dorizu.stockphotos.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.dorizu.core.data.ResultState
 import com.dorizu.stockphotos.R
 import com.dorizu.stockphotos.adapter.PhotosGridAdapter
 import com.dorizu.stockphotos.databinding.ActivityMainBinding
@@ -31,7 +33,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainViewModel.listPhoto.observe(this, {res ->
-            photoGridAdapter.setData(res.data)
+            when(res){
+                is ResultState.Loading -> {
+                    binding.pbPhotos.visibility = View.VISIBLE
+                    binding.tvError.visibility = View.GONE
+                }
+                is ResultState.Empty -> {
+                    binding.pbPhotos.visibility = View.GONE
+                    binding.tvError.visibility = View.VISIBLE
+                    binding.tvError.text = getString(R.string.empty_data)
+                }
+                is ResultState.Success -> {
+                    binding.pbPhotos.visibility = View.GONE
+                    binding.tvError.visibility = View.GONE
+                    photoGridAdapter.setData(res.data)
+                }
+                is ResultState.Error -> {
+                    binding.pbPhotos.visibility = View.GONE
+                    binding.tvError.text = res.message
+                }
+            }
         })
 
         with(binding.rvPhotos){
